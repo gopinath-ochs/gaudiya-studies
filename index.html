@@ -1087,6 +1087,7 @@
     var input = document.getElementById('pw-input');
     var error = document.getElementById('pw-error');
     if (input.value.trim() === 'access') {
+      localStorage.setItem('gsp_auth', 'true');
       document.getElementById('gate').style.display = 'none';
       document.getElementById('main').style.display = 'block';
     } else {
@@ -1129,6 +1130,11 @@
 
   // Wire up events after DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
+    // Check if already authenticated
+    if (localStorage.getItem('gsp_auth') === 'true') {
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+    }
     document.getElementById('gate-btn').addEventListener('click', checkPassword);
     document.getElementById('pw-input').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') checkPassword();
