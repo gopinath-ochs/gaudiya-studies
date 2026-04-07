@@ -173,7 +173,8 @@
   }
 
   header img.logo {
-    height: 72px;
+    height: 80px;
+    display: block;
   }
 
   .header-rule {
@@ -582,7 +583,7 @@
 <!-- ─── PASSWORD GATE ─── -->
 <div id="gate">
   <div class="gate-inner">
-    <img class="gate-logo" src="https://ochs.org.uk/wp-content/uploads/2020/06/cropped-OCHS-Feb-Logo-6.png" alt="OCHS Logo" onerror="this.style.display='none'">
+    <img class="gate-logo" src="https://ochs.org.uk/wp-content/uploads/2020/06/cropped-OCHS-Feb-Logo-6.png" alt="OCHS Logo" onerror="this.src='https://ochs.org.uk/wp-content/uploads/2020/01/OCHS-logo.png'">
     <div class="gate-divider"></div>
     <div class="gate-title">The Gaudiya Studies<br>Tutorial Programme</div>
     <p class="gate-subtitle">Oxford Centre for Hindu Studies</p>
@@ -592,7 +593,7 @@
       <input type="password" id="pw-input" placeholder="••••••" autocomplete="off">
       <div id="pw-error"></div>
     </div>
-    <button class="gate-btn" onclick="checkPassword()">Enter</button>
+    <button class="gate-btn" id="gate-btn">Enter</button>
   </div>
 </div>
 
@@ -601,7 +602,7 @@
 
   <header>
     <div class="header-inner">
-      <img class="logo" src="https://ochs.org.uk/wp-content/uploads/2020/06/cropped-OCHS-Feb-Logo-6.png" alt="OCHS Logo" onerror="this.style.display='none'">
+      <img class="logo" src="https://ochs.org.uk/wp-content/uploads/2020/06/cropped-OCHS-Feb-Logo-6.png" alt="OCHS Logo" onerror="this.src='https://ochs.org.uk/wp-content/uploads/2020/01/OCHS-logo.png'">
       <div class="header-rule"></div>
       <h1>The Gaudiya Studies Tutorial Programme</h1>
       <span class="term-badge">Trinity Term · 2025</span>
@@ -615,7 +616,7 @@
       <div class="section-title">Programme Overview</div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           About the Programme
           <span class="accordion-icon">+</span>
         </button>
@@ -626,7 +627,7 @@
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           Weekly Time Commitment
           <span class="accordion-icon">+</span>
         </button>
@@ -641,7 +642,7 @@
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           Elements of the Programme
           <span class="accordion-icon">+</span>
         </button>
@@ -654,7 +655,7 @@
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           Important Dates
           <span class="accordion-icon">+</span>
         </button>
@@ -679,7 +680,7 @@
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           Technology & Platforms
           <span class="accordion-icon">+</span>
         </button>
@@ -692,7 +693,7 @@
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           Recommended Books
           <span class="accordion-icon">+</span>
         </button>
@@ -709,7 +710,7 @@
       </div>
 
       <div class="accordion-item">
-        <button class="accordion-trigger" aria-expanded="false" onclick="toggleAccordion(this)">
+        <button class="accordion-trigger" aria-expanded="false">
           Support &amp; Contacts
           <span class="accordion-icon">+</span>
         </button>
@@ -766,7 +767,7 @@
               <td class="td-date">2 May</td>
               <td class="td-topic">
                 Context
-                <span class="scholar-link" onclick="toggleScholar('GAD')">Gopīnāthācārya Dāsa · Dr. Rembert Lutjeharms</span>
+                <span class="scholar-link" data-scholar='GAD'>Gopīnāthācārya Dāsa · Dr. Rembert Lutjeharms</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -791,7 +792,7 @@
               <td class="td-date">9 May</td>
               <td class="td-topic">
                 Guru
-                <span class="scholar-link" onclick="toggleScholar('Bhrigu')">Bhṛgupāda Dāsa · Dr. Måns Broo</span>
+                <span class="scholar-link" data-scholar='Bhrigu'>Bhṛgupāda Dāsa · Dr. Måns Broo</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -816,7 +817,7 @@
               <td class="td-date">16 May</td>
               <td class="td-topic">
                 Temples &amp; Deities
-                <span class="scholar-link" onclick="toggleScholar('KrKS')">Kṛṣṇa Kṣetra Swami · Dr. Kenneth R. Valpey</span>
+                <span class="scholar-link" data-scholar='KrKS'>Kṛṣṇa Kṣetra Swami · Dr. Kenneth R. Valpey</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -840,8 +841,8 @@
               <td class="td-week">Week 4</td>
               <td class="td-date">23 May</td>
               <td class="td-topic">
-                Preaching, Teaching &amp; Friendship
-                <span class="scholar-link" onclick="toggleScholar('SRD')">Shaunaka Rishi Das</span>
+                ISKCON Preaching Reviewed
+                <span class="scholar-link" data-scholar='SRD'>Shaunaka Rishi Das</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -866,7 +867,7 @@
               <td class="td-date">30 May</td>
               <td class="td-topic">
                 Bhāgavata Purāṇa
-                <span class="scholar-link" onclick="toggleScholar('RRD')">Rādhikā Ramaṇa Dāsa · Prof. Ravi M. Gupta</span>
+                <span class="scholar-link" data-scholar='RRD'>Rādhikā Ramaṇa Dāsa · Prof. Ravi M. Gupta</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -891,7 +892,7 @@
               <td class="td-date">6 Jun</td>
               <td class="td-topic">
                 Sādhana
-                <span class="scholar-link" onclick="toggleScholar('Bhrigu')">Bhṛgupāda Dāsa · Dr. Måns Broo</span>
+                <span class="scholar-link" data-scholar='Bhrigu'>Bhṛgupāda Dāsa · Dr. Måns Broo</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -916,7 +917,7 @@
               <td class="td-date">13 Jun</td>
               <td class="td-topic">
                 Institution &amp; Community
-                <span class="scholar-link" onclick="toggleScholar('GAD')">Gopīnāthācārya Dāsa · Dr. Rembert Lutjeharms</span>
+                <span class="scholar-link" data-scholar='GAD'>Gopīnāthācārya Dāsa · Dr. Rembert Lutjeharms</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -941,7 +942,7 @@
               <td class="td-date">20 Jun</td>
               <td class="td-topic">
                 Bhakti &amp; Rasa
-                <span class="scholar-link" onclick="toggleScholar('KS')">Kṛṣṇaśaraṇa Dāsa · Prof. Kiyokazu Okita</span>
+                <span class="scholar-link" data-scholar='KS'>Kṛṣṇaśaraṇa Dāsa · Prof. Kiyokazu Okita</span>
               </td>
               <td class="td-actions">
                 <div class="btn-row">
@@ -987,7 +988,7 @@
       <div class="scholars-grid">
 
         <div class="scholar-item" id="scholar-GAD">
-          <button class="scholar-trigger" aria-expanded="false" onclick="toggleScholarBio(this)">
+          <button class="scholar-trigger" aria-expanded="false">
             <div class="scholar-names">
               <span class="scholar-devname">Gopīnāthācārya Dāsa</span>
               <span class="scholar-acadname">Dr. Rembert Lutjeharms</span>
@@ -1001,7 +1002,7 @@
         </div>
 
         <div class="scholar-item" id="scholar-Bhrigu">
-          <button class="scholar-trigger" aria-expanded="false" onclick="toggleScholarBio(this)">
+          <button class="scholar-trigger" aria-expanded="false">
             <div class="scholar-names">
               <span class="scholar-devname">Bhṛgupāda Dāsa</span>
               <span class="scholar-acadname">Dr. Måns Broo</span>
@@ -1015,7 +1016,7 @@
         </div>
 
         <div class="scholar-item" id="scholar-KrKS">
-          <button class="scholar-trigger" aria-expanded="false" onclick="toggleScholarBio(this)">
+          <button class="scholar-trigger" aria-expanded="false">
             <div class="scholar-names">
               <span class="scholar-devname">Kṛṣṇa Kṣetra Swami</span>
               <span class="scholar-acadname">Dr. Kenneth R. Valpey</span>
@@ -1029,11 +1030,11 @@
         </div>
 
         <div class="scholar-item" id="scholar-SRD">
-          <button class="scholar-trigger" aria-expanded="false" onclick="toggleScholarBio(this)">
+          <button class="scholar-trigger" aria-expanded="false">
             <div class="scholar-names">
               <span class="scholar-devname">Shaunaka Rishi Das</span>
               <span class="scholar-acadname">OCHS Director</span>
-              <span class="scholar-topics">Preaching, Teaching &amp; Friendship</span>
+              <span class="scholar-topics">ISKCON Preaching Reviewed</span>
             </div>
             <span class="scholar-chevron">▾</span>
           </button>
@@ -1043,7 +1044,7 @@
         </div>
 
         <div class="scholar-item" id="scholar-RRD">
-          <button class="scholar-trigger" aria-expanded="false" onclick="toggleScholarBio(this)">
+          <button class="scholar-trigger" aria-expanded="false">
             <div class="scholar-names">
               <span class="scholar-devname">Rādhikā Ramaṇa Dāsa</span>
               <span class="scholar-acadname">Prof. Ravi M. Gupta</span>
@@ -1057,7 +1058,7 @@
         </div>
 
         <div class="scholar-item" id="scholar-KS">
-          <button class="scholar-trigger" aria-expanded="false" onclick="toggleScholarBio(this)">
+          <button class="scholar-trigger" aria-expanded="false">
             <div class="scholar-names">
               <span class="scholar-devname">Kṛṣṇaśaraṇa Dāsa</span>
               <span class="scholar-acadname">Prof. Kiyokazu Okita</span>
@@ -1081,42 +1082,71 @@
 
 </div><!-- /main -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // ─── PASSWORD ───
+<script>
   function checkPassword() {
-    const input = document.getElementById('pw-input');
-    const error = document.getElementById('pw-error');
-    if (input.value === 'access') {
+    var input = document.getElementById('pw-input');
+    var error = document.getElementById('pw-error');
+    if (input.value.trim() === 'access') {
       document.getElementById('gate').style.display = 'none';
       document.getElementById('main').style.display = 'block';
     } else {
       error.textContent = 'Incorrect access code. Please try again.';
       input.classList.add('error');
       input.value = '';
-      setTimeout(() => input.classList.remove('error'), 600);
+      setTimeout(function() { input.classList.remove('error'); }, 600);
     }
   }
 
-  document.getElementById('pw-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') checkPassword();
-  });
-
-  // ─── ACCORDION ───
   function toggleAccordion(btn) {
-    const body = btn.nextElementSibling;
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !isOpen);
+    var body = btn.nextElementSibling;
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
     body.classList.toggle('open', !isOpen);
   }
 
-  // ─── SCHOLAR BIO TOGGLE (from table link) ───
   function toggleScholar(id) {
-    const el = document.getElementById('scholar-' + id);
+    var el = document.getElementById('scholar-' + id);
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    const btn = el.querySelector('.scholar-trigger');
-    const bio = el.querySelector('.scholar-bio');
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    var btn = el.querySelector('.scholar-trigger');
+    var bio = el.querySelector('.scholar-bio');
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
     if (!isOpen) {
       btn.setAttribute('aria-expanded', 'true');
-      bio.classList.ad
+      bio.classList.add('open');
+    }
+    el.style.transition = 'background 0.3s';
+    el.style.background = '#dde3ef';
+    setTimeout(function() { el.style.background = ''; }, 1200);
+  }
+
+  function toggleScholarBio(btn) {
+    var bio = btn.nextElementSibling;
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    bio.classList.toggle('open', !isOpen);
+  }
+
+  // Wire up events after DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('gate-btn').addEventListener('click', checkPassword);
+    document.getElementById('pw-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    document.querySelectorAll('.accordion-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() { toggleAccordion(this); });
+    });
+
+    document.querySelectorAll('.scholar-link').forEach(function(el) {
+      var id = el.getAttribute('data-scholar');
+      el.addEventListener('click', function() { toggleScholar(id); });
+    });
+
+    document.querySelectorAll('.scholar-trigger').forEach(function(btn) {
+      btn.addEventListener('click', function() { toggleScholarBio(this); });
+    });
+  });
+</script>
+</body>
+</html>
